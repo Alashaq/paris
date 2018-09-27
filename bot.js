@@ -65,4 +65,4 @@ if (message.content === "سبام" + "<@" + `${client.user.id}` + ">") {
 
 
 
-client.login('NDgyMDAxNDU3Njg4NjA4Nzg4.Do5bhg.wZM2APGiX47WQ20nSOJrd8shSwI');
+client.login('NDgyMDAxNDU3Njg4NjA4Nzg4.Do5cCw.tb63yHlA0xIhmqxQbUDTA8jw5m0');
