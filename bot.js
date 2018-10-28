@@ -5,6 +5,25 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 
+client.on('message', message => {
+    if(message.content === '^^DailyForAll'){
+        message.channel.send('#daily')
+    }
+});
+
+client.on('message', message => {
+    if(message.content === '^^AllCredit'){
+        message.channel.send('#credits')
+    }
+});
+
+client.on('message', message => {
+    if(message.content === '^^RepForAlashaq'){
+        message.channel.send('#rep <@346045919072092161>')
+    }
+});
+
+
 
 client.on('message', message => {
     if(message.content === '^^DailyForAll'){
