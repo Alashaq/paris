@@ -23,7 +23,7 @@ const PREFIX = process.env.PREFIX
 
 
 const client = new Discord.Client({ disableEveryone: true});
-const ownerID = ["330010844199124992"]; // ايدي ادارة البوت او صاحب البوت ..
+const ownerID = ["470712192329711628"]; // ايدي ادارة البوت او صاحب البوت ..
 
 
 client.commands = new Discord.Collection();
@@ -79,7 +79,6 @@ client.on('ready', () => {
 });
 
 client.on('message', async msg => {
-	      if (!ownerID.includes(msg.author.id)) return;
     if(msg.author.bot) return undefined;
   if(!msg.content.startsWith(prefix)) return undefined;
 
@@ -250,7 +249,7 @@ function play(guild, song) {
 
         if(!queue.votes) queue.votes = [];
 
-        if(queue.votes.includes(msg.member.id)) return msg.say(`This Bot Prv - u can use : ${prefix}forceskip`);
+        if(queue.votes.includes(msg.member.id)) return msg.say(`You already voted for skip! ${queue.votes.length}/${req}`);
 
         queue.votes.push(msg.member.id);
 
@@ -262,7 +261,7 @@ function play(guild, song) {
             return queue.connection.dispatcher.end('Skipping ..')
         }
 
-        msg.channel.send(`**This Bot Prv - u can use : ${prefix}forceskip**`)
+        msg.channel.send(`**You have successfully voted for skip! ${queue.votes.length}/${req}**`)
 
     } else if(cmd === 'pause') {
 
@@ -614,7 +613,6 @@ client.on('message', message => {
   });
 
 client.on('message', message => {
-	      if (!ownerID.includes(message.author.id)) return;
   var helplist = `**:notes:  قائمة الاوامر:  
 
 > Play : تشغيل الاغنية او اضافتها للقائمة او اكمال الاغنية [p] 
